@@ -4,11 +4,6 @@
   padding: 0;
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
 :root {
   --red: #ff7a7a;
   --green: #38cc8c;
@@ -16,6 +11,11 @@ html {
   --dark-blue: #3e3c49;
   --grayish-blue: #b9b6d3;
   --white: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 body {
@@ -34,6 +34,12 @@ body {
   display: grid;
 }
 
+@media only screen and (width <= 62.5em) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
 .main__intro {
   flex-direction: column;
   justify-content: center;
@@ -42,14 +48,39 @@ body {
   display: flex;
 }
 
+@media only screen and (width <= 62.5em) {
+  .main__intro {
+    align-items: center;
+  }
+}
+
+@media only screen and (width <= 37.5em) {
+  .main__intro {
+    padding: 1rem 1rem 3rem;
+  }
+}
+
 .main__intro--title h1 {
   color: var(--white);
   font-size: 4rem;
   line-height: 1.2;
 }
 
+@media only screen and (width <= 37.5em) {
+  .main__intro--title h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
 .main__intro--title span {
   display: block;
+}
+
+@media only screen and (width <= 62.5em) {
+  .main__intro--content {
+    text-align: center;
+  }
 }
 
 .main__intro--content p {
@@ -57,9 +88,29 @@ body {
   font-size: 1.4rem;
 }
 
+@media only screen and (width <= 37.5em) {
+  .main__intro--content p {
+    font-size: 1.4rem;
+    line-height: 2;
+  }
+}
+
 .main__register {
   width: 80%;
   padding: 1rem;
+}
+
+@media only screen and (width <= 62.5em) {
+  .main__register {
+    justify-self: center;
+    width: 60%;
+  }
+}
+
+@media only screen and (width <= 37.5em) {
+  .main__register {
+    width: 95%;
+  }
 }
 
 .main__register--trial {
@@ -72,6 +123,13 @@ body {
   font-size: 1.2rem;
   font-weight: 700;
   box-shadow: 0 .7rem #3e3c493c;
+}
+
+@media only screen and (width <= 37.5em) {
+  .main__register--trial {
+    padding: 1.6rem 4.9rem;
+    font-size: 1.6rem;
+  }
 }
 
 .main__register--trial span {
@@ -151,6 +209,20 @@ body {
 .main__register--form-terms span {
   color: var(--red);
   font-weight: 700;
+}
+
+.attribution {
+  color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.4rem;
+  display: flex;
+}
+
+.attribution a:link, .attribution a:visited {
+  color: var(--blue);
+  text-decoration: none;
 }
 
 .hidden {
