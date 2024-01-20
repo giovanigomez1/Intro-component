@@ -7,7 +7,7 @@
     "start": "parcel index.html",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "dev": "npm-run-all --parallel watch:sass start",
-    "duild": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "author": "Ing.GGP",
   "license": "ISC",
